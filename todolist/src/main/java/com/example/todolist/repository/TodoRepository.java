@@ -1,4 +1,2 @@
-package com.example.todolist.repository;
-
-public class TodoRepository {
+package com.example.todolist.repository;public interface TodoRepository {
 }
