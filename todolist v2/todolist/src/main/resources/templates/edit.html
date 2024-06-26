@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit Todo</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+    <h1>Edit Todo</h1>
+    <form th:action="@{/update/{id}(id=${todo.id})}" th:object="${todo}" method="post">
+        <input type="text" th:field="*{title}" required>
+        <select th:field="*{priority}">
+            <option value="1" th:selected="${todo.priority == 1}">Low</option>
+            <option value="2" th:selected="${todo.priority == 2}">Medium</option>
+            <option value="3" th:selected="${todo.priority == 3}">High</option>
+        </select>
+        <button type="submit">Update</button>
+    </form>
+</body>
+</html>
